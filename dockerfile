@@ -4,13 +4,18 @@ FROM ruby
 #work direcrot. default folder location
 WORKDIR /home/app
 
-#environemtnt variable
-ENV PORT 3000
 
-EXPOSE $PORT
+COPY Gemfile Gemfile.lock ./
 
-RUN gem install rails bundler
-RUN gem install rails
-RUN apt-get update -qq && apt-get install -y nodejs
+# Install gems
+RUN gem install bundler && \
+    bundle install --jobs 4
 
-ENTRYPOINT [ "/bin/bash" ]
+# Copy the application code
+COPY . .
+
+# Expose ports
+EXPOSE 3000
+
+# Set the entrypoint command
+CMD ["rails", "server", "-b", "0.0.0.0"]
