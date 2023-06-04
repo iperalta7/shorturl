@@ -22,6 +22,12 @@ class ShortUrlsController < ApplicationController
       @short_url = ShortUrl.find_by(short_url: params[:short_url])
       redirect_to @short_url.original_url, allow_other_host: true
     end
+
+    def destroy
+      @short_url = ShortUrl.find(params[:id])
+      @short_url.destroy
+      redirect_to root_path, notice: 'Short URL was successfully deleted.'
+    end
   
     private
   
