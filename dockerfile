@@ -1,11 +1,11 @@
 # docker will pull a setup of ruby(like npm)
-FROM ruby
+FROM ruby:3.2.2
 
 #work direcrot. default folder location
 WORKDIR /home/app
 
-
-COPY Gemfile Gemfile.lock ./
+COPY Gemfile .
+COPY Gemfile.lock .
 
 # Install gems
 RUN gem install bundler && \
