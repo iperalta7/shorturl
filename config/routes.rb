@@ -3,4 +3,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
+  root 'short_urls#index'
+  resources :short_urls, only: [:index, :create, :show, :destroy]
+  get ':short_url', to: 'short_urls#redirect', as: :redirect
 end
