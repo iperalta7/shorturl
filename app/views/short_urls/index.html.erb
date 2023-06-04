@@ -1,0 +1,19 @@
+<h1>URL Shortener</h1>
+
+<h2>Shorten a URL</h2>
+<%= form_with(model: ShortUrl.new, url: short_urls_path, local: true) do |form| %>
+  <div>
+    <%= form.text_field :original_url, placeholder: 'Enter a URL', required: true %>
+  </div>
+  <div>
+    <%= form.submit 'Shorten URL' %>
+  </div>
+<% end %>
+
+<h2>Previously shortened URLs</h2>
+<% @short_urls.each do |short_url| %>
+  <p>
+    <%= link_to short_url.short_url, redirect_path(short_url.short_url) %>
+  </p>
+<% end %>
+
