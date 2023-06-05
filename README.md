@@ -12,14 +12,20 @@ This is a URL shortener application built with Ruby on Rails and containerized u
 
 ### Run with Docker
 
-1. Make sure you have Docker and Docker Compose installed on your machine.
+1. Have Docker installed. 
 
-2. Clone this repository to your local machine.
+2. Clone this repository.
 
-3. In the project root directory, run the following command to build and start the Docker containers:
+3. In the root directory, run the following command to build and start the Docker containers:
 
    ```shell
    docker-compose up --build
+   ```
+    or 
+
+    ```shell
+   docker build -t <name> .
+   docker run <name>
    ```
 
    This will build the Docker images, create and start the containers for the Rails app and the database.
@@ -31,8 +37,7 @@ This is a URL shortener application built with Ruby on Rails and containerized u
    ```shell
    docker-compose down
    ```
-
-
+   
 ## Usage
 
 - On the homepage, you can enter a long URL in the input field and click "Shorten URL" to create a shortened version.
