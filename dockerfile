@@ -17,5 +17,4 @@ COPY . .
 # Expose ports
 EXPOSE 3000
 
-# Set the entrypoint command
-CMD ["rails", "server", "-b", "0.0.0.0"]
+ENTRYPOINT ["sh", "/home/app/entrypoint.sh" ]
