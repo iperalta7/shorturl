@@ -1,20 +1,21 @@
 # docker will pull a setup of ruby(like npm)
 FROM ruby:3.2.2
 
-#work direcrot. default folder location
+#default folder location
 WORKDIR /home/app
-
-COPY Gemfile .
-COPY Gemfile.lock .
-
-# Install gems
-RUN gem install bundler && \
-    bundle install --jobs 4
 
 # Copy the application code
 COPY . .
 
+# Install gems
+RUN gem install bundler && \
+    bundle install --jobs=4
+
+# Run data migrations
+RUN bundle exec rails db:migrate
+
 # Expose ports
 EXPOSE 3000
 
-ENTRYPOINT ["sh", "/home/app/entrypoint.sh" ]
+# Configure the main process to run when running the image
+CMD ["rails", "server", "-b", "0.0.0.0"]

@@ -16,27 +16,22 @@ This is a URL shortener application built with Ruby on Rails and containerized u
 
 2. Clone this repository.
 
-3. In the root directory, run the following command to build and start the Docker containers:
+3. In the project directory, run the following commands to build and run the Docker containers:
 
    ```shell
-   docker-compose up --build
+      docker build . -it short
    ```
-    or 
+    and
 
     ```shell
-   docker build -t <name> .
-   docker run <name>
+   docker run -p 3000:3000 short
    ```
 
-   This will build the Docker images, create and start the containers for the Rails app and the database.
+   This will build the Docker images, create and start the container for the Rails app and the database.
 
 4. Access the application in your browser at `http://localhost:3000`.
 
-5. To stop the application, press `Ctrl+C` in the terminal and run the following command to stop and remove the Docker containers:
-
-   ```shell
-   docker-compose down
-   ```
+5. To stop the application, press `Ctrl+C` in the terminal
    
 ## Usage
 
