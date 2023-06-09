@@ -1,12 +1,5 @@
 class ShortUrlsController < ApplicationController
 
-  # GET /short_urls
-  # Display a list of all short URLs
-  def index
-    @short_urls = ShortUrl.all
-    @short_url = ShortUrl.new
-  end
-
   # POST /short_urls
   # Create a new short URL
   def create
