@@ -45,8 +45,10 @@ This is a URL shortener application built with Ruby on Rails and containerized u
 
 Some possible additions or updates I might add for this URL shortener application:
 
-1. **User Login System**: Implement a user authentication system to have each user. This will allow users to create accounts, log in, and manage their own shortened URLs. Additionally, you can use the user context to automatically delete URLs based on an expiration date or provide personalized features.
+1. Validate input and ensure the url is an actual one and in the correct format. Pop up an error message when it is not a valid url. 
 
-2. **Automatic URL Expiration**: Add functionality to set an expiration date for each shortened URL. This can be achieved by adding an expiration date field to the `ShortUrl` model and implementing logic to delete the URL when the expiration date is reached. 
+2. **User Login System**: Implement a user authentication system to have each user. This will allow users to create accounts, log in, and manage their own shortened URLs. Additionally, you can use the user context to automatically delete URLs based on an expiration date or provide personalized features.
 
-3. **Copy Button**: Add a "Copy" button next to each shortened URL. This can be accomplished using JavaScript to copy the shortened URL to the clipboard when the button is clicked. 
+3. **Automatic URL Expiration**: Add functionality to set an expiration date for each shortened URL. This can be achieved by adding an expiration date field to the `ShortUrl` model and implementing logic to delete the URL when the expiration date is reached. 
+
+4. **Copy Button**: Add a "Copy" button next to each shortened URL. This can be accomplished using JavaScript to copy the shortened URL to the clipboard when the button is clicked. 
